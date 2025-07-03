@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Rápido</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Início</a> |
+        <a href="{{ url_for('cadastro') }}">Cadastro</a> |
+        <a href="{{ url_for('login') }}">Login</a> |
+        <a href="{{ url_for('painel') }}">Painel</a> |
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block conteudo %}{% endblock %}
+</body>
+</html>

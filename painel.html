@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2>Painel do Usuário</h2>
+<p>Bem-vindo(a), {{ nome }}!</p>
+<a href="{{ url_for('logout') }}">Sair</a>
+{% endblock %}
